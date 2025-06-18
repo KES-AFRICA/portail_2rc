@@ -22,6 +22,13 @@ const applications = [
         status: "inactive",
     },
     {
+        name: "Gestion des panneaux des feux de signalisation",
+        description: "Application pour la gestion intelligente des feux de signalisation, incluant la synchronisation et le suivi des pannes.",
+        url: "#",
+        image: "src/feux_signalisation_img.jpg",
+        status: "inactive",
+    },
+    {
         name: "Gestion des états des routes",
         description: "Application pour le suivi de l'état des routes, incluant les réparations et les signalements.",
         url: "#",

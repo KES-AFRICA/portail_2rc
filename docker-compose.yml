@@ -1,0 +1,9 @@
+services:
+  2rc-portal-app:
+    build:
+      context: . # Le Dockerfile est dans le même répertoire
+      dockerfile: Dockerfile
+    container_name: 2rc-portal-app # Nom unique pour votre conteneur de portail
+    ports:
+      - "8080:80" # Mappe le port 8080 de l'hôte au port 80 du conteneur Nginx
+    restart: always # Assure que le conteneur démarre avec le VPS et reste en ligne

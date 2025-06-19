@@ -8,7 +8,7 @@ async function hashPassword(password) {
 }
 
 // Hash du mot de passe correct (pré-calculé pour "2Rc@@2025-")
-const correctPasswordHash = 'a8f5f167f44f4964e6c998dee827110dbacf87c23b4a8a1f4a69b1ff7b47a5f7';
+const correctPasswordHash = 'f52d7d0dbb72dd20df4484f6149befeead5a64a5a03f82eeb805467cd0fb88ea';
 
 // Gestion de l'affichage/masquage du mot de passe
 document.getElementById('togglePassword').addEventListener('click', function() {
@@ -50,7 +50,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
             
             // Rediriger vers le portail après un court délai
             setTimeout(() => {
-                window.location.href = 'portal.html';
+                window.location.href = 'index.html';
             }, 500);
         } else {
             // Mot de passe incorrect
@@ -83,8 +83,8 @@ function checkAuthentication() {
         const sessionTimeout = 24 * 60 * 60 * 1000; // 24 heures en millisecondes
         
         if (sessionAge < sessionTimeout) {
-            // Session valide, rediriger vers le portail
-            window.location.href = 'portal.html';
+            // Session valide, rediriger vers le index.html
+            window.location.href = 'index.html';
         } else {
             // Session expirée, nettoyer
             sessionStorage.removeItem('authenticated');

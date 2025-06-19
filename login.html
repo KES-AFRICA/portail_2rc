@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Portail Applications 2RC</title>
+    <meta name="description" content="Accès sécurisé au portail des applications métier de 2RC - Régie des Routes et Constructions.">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" href="src/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="src/apple-touch-icon.png">
+</head>
+<body>
+    <div class="decorative-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <div class="login-container">
+        <header class="header">
+            <div class="header-container">
+                <div class="logo-container">
+                    <img src="src/2rc_logo.png" alt="Logo 2RC" loading="lazy" />
+                </div>
+
+                <div class="logo-section">
+                    <div class="logo-container">
+                        <img src="src/cud_logo.png" alt="Logo CUD" loading="lazy" />
+                    </div>
+                    <div>
+                        <h1>Accès au Portail</h1>
+                        <p>Régie des Routes et Constructions - Connexion sécurisée</p>
+                    </div>
+                </div>
+
+                <div class="logo-container">
+                    <img src="src/kes_ec_logo.png" alt="Logo Kes EC" loading="lazy" />
+                </div>
+            </div>
+        </header>
+
+        <div class="login-form-container">
+            <h2 class="login-title">Connexion</h2>
+            
+            <div class="error-message" id="errorMessage">
+                Mot de passe incorrect. Veuillez réessayer.
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <div class="password-container">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="form-input" 
+                            placeholder="Entrez votre mot de passe"
+                            required
+                            autocomplete="current-password"
+                        >
+                        <button type="button" class="toggle-password" id="togglePassword">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="login-button">
+                    Se connecter
+                </button>
+            </form>
+
+            <div class="security-notice">
+                🔒 Accès sécurisé au portail des applications métier 2RC
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

@@ -263,4 +263,81 @@ function handleImageError() {
     document.addEventListener('error', (e) => {
         if (e.target.tagName === 'IMG') {
             // Image de fallback si l'image ne se charge pas
-            e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi
+            e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEwMCAxMDBoNTB2NTBoLTUweiIvPjwvc3ZnPg==';
+        }
+    }, true);
+}
+
+// Exécuter l'initialisation lorsque le DOM est chargé
+document.addEventListener('DOMContentLoaded', () => {
+    init();
+    handleImageError();
+});
+// Vérifier l'authentification à chaque chargement de la page
+window.addEventListener('load', () => {
+    checkAuthentication();
+});
+// Ajouter un écouteur d'événement pour la touche "Escape" pour fermer les modales
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const openModal = document.querySelector('.modal.open');
+        if (openModal) {
+            openModal.classList.remove('open');
+        }
+    }
+});
+// });
+//     document.getElementById('loginForm').submit();
+//     }
+//     }
+//     }
+//             }    
+//     });
+//             // Rediriger vers le portail après un court délai
+//             setTimeout(() => {
+//                 window.location.href = 'portal.html';
+//             }, 500);
+//     }
+//     } else {
+// Mot de passe incorrect
+// errorMessage.style.display = 'block';
+// passwordInput.value = '';
+// passwordInput.focus();
+//
+// Animation d'erreur
+// passwordInput.style.borderColor = '#EF4444';
+// setTimeout(() => {
+//     passwordInput.style.borderColor = '';
+// }, 2000);
+//     }
+//     } catch (error) {
+// console.error('Erreur lors du hachage:', error); 
+// errorMessage.textContent = 'Erreur technique. Veuillez réessayer.';
+// errorMessage.style.display = 'block';
+//     }
+//     }
+//     const currentTime = Date.now();
+
+//     const sessionAge = currentTime - parseInt(authTime);
+//     const sessionTimeout = 24 * 60 * 60 * 1000; // 24 heures en millisecondes
+//         if (sessionAge < sessionTimeout) {
+
+//             // Session valide, rediriger vers le portail
+//             window.location.href = 'portal.html';
+//         } else {
+//             // Session expirée, nettoyer
+//             sessionStorage.removeItem('authenticated');
+//             sessionStorage.removeItem('authTime');
+//         }
+//     }
+//     }
+//     // Focus automatique sur le champ mot de passe
+//     document.getElementById('password').focus();
+//     // Gérer l'appui sur Entrée
+//     document.getElementById('password').addEventListener('keypress', function(e) {
+
+//         if (e.key === 'Enter') {
+//             document.getElementById('loginForm').dispatchEvent(new Event('submit'));
+//         }
+//     });
+//     }

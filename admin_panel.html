@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Logs de Connexion</title>
+    <link rel="icon" href="src/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/admin_panel.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1>🔐 Administration - Logs de Connexion</h1>
+                <p>Suivi des connexions au portail 2RC</p>
+            </div>
+            <div class="stats-row">
+                <div class="stat-item">
+                    <strong id="totalConnections">0</strong> connexions
+                </div>
+                <div class="stat-item">
+                    <strong id="uniqueUsers">0</strong> utilisateurs
+                </div>
+                <div class="stat-item">
+                    Dernière: <strong id="lastConnection">-</strong>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="controls">
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="search-input" 
+                placeholder="🔍 Rechercher par email, IP, pays, navigateur..."
+            >
+            <button class="btn btn-primary" onclick="refreshData()">
+                🔄 Actualiser
+            </button>
+            <button class="btn btn-success" onclick="exportToCSV()">
+                📊 Exporter CSV
+            </button>
+            <button class="btn btn-danger" onclick="clearLogs()">
+                🗑️ Vider les logs
+            </button>
+        </div>
+
+        <div id="connectionsContainer">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                Chargement des données de connexion...
+            </div>
+        </div>
+
+        <div class="pagination" id="pagination" style="display: none;">
+            <button id="prevPage" onclick="changePage(-1)">← Précédent</button>
+            <span id="pageInfo">Page 1 sur 1</span>
+            <button id="nextPage" onclick="changePage(1)">Suivant →</button>
+        </div>
+    </div>
+
+    <script src="js/admin_panel.js"></script>
+
+</body>
+</html>

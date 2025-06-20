@@ -54,6 +54,19 @@
 
             <form id="loginForm">
                 <div class="form-group">
+                    <label for="email" class="form-label">Adresse email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-input" 
+                        placeholder="votre.email@example.com"
+                        required
+                        autocomplete="email"
+                    >
+                </div>
+
+                <div class="form-group">
                     <label for="password" class="form-label">Mot de passe</label>
                     <div class="password-container">
                         <input 
@@ -71,7 +84,12 @@
                     </div>
                 </div>
 
-                <p class="forgot-password">Mot de passe oublié ? <a href="#forgot-password" rel="noopener noreferrer" class="forgot-password-link">Réinitialiser</a></p>
+                <p class="forgot-password">
+                    Mot de passe oublié ? 
+                    <a href="mailto:admin@2rc.com?subject=Réinitialisation mot de passe&body=Bonjour,%0D%0A%0D%0AJe souhaite réinitialiser mon mot de passe pour accéder au portail 2RC.%0D%0A%0D%0AEmail: %0D%0ANom complet: %0D%0AService: %0D%0A%0D%0AMerci." class="forgot-password-link">
+                        Contactez l'administrateur
+                    </a>
+                </p>
 
                 <button type="submit" class="login-button">
                     Se connecter
